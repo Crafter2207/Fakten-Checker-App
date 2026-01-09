@@ -26,11 +26,7 @@ Hauptfunktionen:
     - Benutzer erhalten Benachrichtigungen über neue Faktenchecks zu Themen, die sie interessieren.
     - Möglichkeit, Benachrichtigungen für bestimmte Schlüsselwörter oder Themen zu aktivieren.
 
-4. Community-Feedback:
-    - Benutzer können eigene Faktenchecks einreichen und Feedback von der Community erhalten.
-    - Möglichkeit, Diskussionen über die Richtigkeit von Informationen zu führen.
-
-5. Bildungsressourcen:
+4. Bildungsressourcen:
     - Bereitstellung von Tutorials und Leitfäden zur kritischen Bewertung von Informationen.
     - Tipps zur Erkennung von Fehlinformationen und Fake News.  
 
