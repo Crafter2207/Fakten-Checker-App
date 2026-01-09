@@ -2,4 +2,35 @@ App-Konzept
 
 App-Name: Fakten-Checker
 
-A
+Zielgruppe:
+- Allgemeine Öffentlichkeit
+- Journalisten
+- Bildungseinrichtungen
+- Forschungseinrichtungen
+- Soziale Medien Nutzer
+
+Zweck der App:
+Die App "Fakten-Checker" soll Benutzern helfen, die Richtigkeit von Informationen
+zu überprüfen, indem sie eine einfache Möglichkeit bietet, Fakten zu recherchieren und zu validieren.
+
+Hauptfunktionen:
+1. Faktenüberprüfung:
+    - Benutzer können Text eingeben oder URLs von Artikeln teilen, um die darin enthaltenen Fakten zu überprüfen.
+    - Die App durchsucht eine Datenbank vertrauenswürdiger Quellen und liefert eine Bewertung der Richtigkeit der Informationen.
+
+2. Quellenbewertung:
+    - Die App bietet Bewertungen und Analysen der Zuverlässigkeit verschiedener Informationsquellen.
+    - Benutzer können sehen, welche Quellen als vertrauenswürdig gelten und welche nicht.
+   
+3. Benachrichtigungen:
+    - Benutzer erhalten Benachrichtigungen über neue Faktenchecks zu Themen, die sie interessieren.
+    - Möglichkeit, Benachrichtigungen für bestimmte Schlüsselwörter oder Themen zu aktivieren.
+
+4. Community-Feedback:
+    - Benutzer können eigene Faktenchecks einreichen und Feedback von der Community erhalten.
+    - Möglichkeit, Diskussionen über die Richtigkeit von Informationen zu führen.
+
+5. Bildungsressourcen:
+    - Bereitstellung von Tutorials und Leitfäden zur kritischen Bewertung von Informationen.
+    - Tipps zur Erkennung von Fehlinformationen und Fake News.  
+
