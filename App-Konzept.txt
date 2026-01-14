@@ -1,32 +1,449 @@
-App-Konzept
+APP-KONZEPT: „Fakten-Checker“
 
-App-Name: Fakten-Checker
+Journalistische Fakten- & Argumentations-App (Android)
 
-Zielgruppe:
-- Allgemeine Öffentlichkeit
-- Journalisten
-- Bildungseinrichtungen
-- Forschungseinrichtungen
-- Soziale Medien Nutzer
+1. Ziel & Nutzen der App
+Hauptziel
 
-Zweck der App:
-Die App "Fakten-Checker" soll Benutzern helfen, die Richtigkeit von Informationen
-zu überprüfen, indem sie eine einfache Möglichkeit bietet, Fakten zu recherchieren und zu validieren.
+Die App „Fakten-Checker“ stellt Jugendlichen und jungen Erwachsenen ein neutrales, journalistisch verantwortetes Werkzeug zur Verfügung, mit dem sie kontroverse Inhalte prüfen, Fakten von Behauptungen trennen und Pro- & Contra-Argumente strukturiert nachvollziehen können – ohne Meinungen abzufragen, zu speichern oder zu bewerten.
 
-Hauptfunktionen:
-1. Faktenüberprüfung:
-    - Benutzer können Text eingeben oder URLs von Artikeln teilen, um die darin enthaltenen Fakten zu überprüfen.
-    - Die App durchsucht eine Datenbank vertrauenswürdiger Quellen und liefert eine Bewertung der Richtigkeit der Informationen.
+Pädagogischer Mehrwert
 
-2. Quellenbewertung:
-    - Die App bietet Bewertungen und Analysen der Zuverlässigkeit verschiedener Informationsquellen.
-    - Benutzer können sehen, welche Quellen als vertrauenswürdig gelten und welche nicht.
-   
-3. Benachrichtigungen:
-    - Benutzer erhalten Benachrichtigungen über neue Faktenchecks zu Themen, die sie interessieren.
-    - Möglichkeit, Benachrichtigungen für bestimmte Schlüsselwörter oder Themen zu aktivieren.
+Förderung von Medien- und Informationskompetenz
 
-4. Bildungsressourcen:
-    - Bereitstellung von Tutorials und Leitfäden zur kritischen Bewertung von Informationen.
-    - Tipps zur Erkennung von Fehlinformationen und Fake News.  
+Vermittlung von Fähigkeiten in:
 
+Faktenprüfung
+
+Quellenverständnis (nicht Bewertung durch Nutzer)
+
+Argumentationslogik
+
+Stärkung kritischen Denkens ohne Meinungslenkung oder Polarisierung
+
+Journalistische Mehrwert
+
+Klare Trennung zwischen:
+
+geprüften Fakten
+
+journalistisch eingeordneten Argumentationslinien
+
+Transparenz journalistischer Arbeitsweisen
+
+Vertrauensaufbau durch nachvollziehbare Quellen, Prüfpfade und Aktualitätsangaben
+
+2. Zielgruppenbeschreibung
+Primäre Zielgruppe
+
+Jugendliche und junge Erwachsene (12–20 Jahre)
+
+Sekundäre Zielgruppen
+
+Journalisten (Recherche- & Vermittlungsplattform)
+
+Bildungseinrichtungen (Unterrichtsbegleitend)
+
+Forschungseinrichtungen (Medienkompetenz)
+
+Allgemeine Öffentlichkeit (passive Nutzung geprüfter Inhalte)
+
+Nutzungsszenarien
+
+Kontakt mit kontroversen Inhalten über:
+
+TikTok
+
+Instagram
+
+YouTube
+
+Messenger-Gruppen
+
+Schulischer Kontext (Medienkunde, Politik, Sozialwissenschaften)
+
+Eigenständige Recherche aus Unsicherheit oder Neugier
+
+Typische Einstiegspunkte
+
+Teilen-Funktion aus Social- & News-Apps
+
+Copy & Paste von Aussagen oder Headlines
+
+In-App-Themenübersicht aktueller Debatten
+
+3. Zentrale App-Funktionen
+3.1 Fact-Checking-Modul
+Eingabearten
+
+Text (Behauptung, Zitat, Headline)
+
+URL (Artikel, Social-Media-Post)
+
+Screenshot (OCR-gestützt, optional)
+
+Prüfprozess
+
+Stufe 1: Automatisierte Vorprüfung
+
+Anbindung externer Fakten- & Daten-APIs
+
+Abgleich mit:
+
+bekannten Falschbehauptungen
+
+statistischen Daten
+
+öffentlichen Wissensdatenbanken
+
+Erkennung von:
+
+fehlendem Kontext
+
+ungeprüften oder unvollständigen Aussagen
+
+Stufe 2: Journalistische Validierung
+
+Redaktionelle Prüfung durch Journalisten:
+
+Quellenlage
+
+Aktualität
+
+Kontextualisierung
+
+Freigabe mit klarer Begründung
+
+Ergebnisdarstellung
+
+Faktenstatus:
+
+Bestätigt
+
+Teilweise korrekt
+
+Unbelegt
+
+Falsch
+
+Darstellung:
+
+geprüfte Fakten
+
+verwendete Quellen
+
+Datum und Stand der Prüfung
+
+keine Bewertungsskalen, keine Nutzerurteile
+
+3.2 Pro- & Contra-Modul
+Struktur
+
+Strikte Dreiteilung:
+
+Faktenbasis
+
+ausschließlich geprüfte, belegte Aussagen
+
+Pro-Argumente
+
+journalistisch zusammengefasste Argumentationslinien
+
+Contra-Argumente
+
+journalistisch zusammengefasste Gegenargumente
+
+Visuelle Kennzeichnung
+
+Fakten: neutral (grau / blau)
+
+Pro: grün
+
+Contra: rot
+
+Umgang mit Unsicherheiten
+
+Eigener Abschnitt:
+
+„Was ist derzeit unklar?“
+
+„Welche Daten fehlen oder sind widersprüchlich?“
+
+Klare Kennzeichnung von:
+
+widersprüchlichen Studien
+
+vorläufigen Erkenntnissen
+
+3.3 Gamified Learning
+Module
+
+„Fakt oder Behauptung?“
+
+„Quelle verstehen“
+
+„Argument oder Meinung?“
+
+Lernziele
+
+Erkennen manipulativer Sprache
+
+Verständnis journalistischer Prüfkriterien
+
+Differenzierung zwischen Information, Argument und Meinung
+
+Belohnungssystem
+
+Fortschrittsabzeichen (z. B. „Quellen-Versteher“, „Fakten-Profi“)
+
+Freischaltung zusätzlicher Erklärformate
+
+keine Bewertung von Meinungen oder Haltungen
+
+3.4 Journalisten-Bereich
+Inhalte
+
+Hintergrundartikel
+
+Kurz-Erklärvideos
+
+Ausführliche Faktenchecks
+
+Formate
+
+„So wurde geprüft“
+
+„Warum diese Quelle genutzt wurde“
+
+„Häufige Missverständnisse“
+
+Interaktion
+
+Ask-a-Journalist
+
+Fragen anonym
+
+Antworten öffentlich, redaktionell geprüft
+
+3.5 Community- & Meldesystem
+Meldeprozess
+
+Nutzer melden:
+
+neue Behauptungen
+
+virale Inhalte
+
+Keine Kommentare, keine Diskussionen
+
+Journalistisches Feedback
+
+Statusanzeige:
+
+In Prüfung
+
+Geprüft
+
+Abgelehnt (mit Begründung)
+
+Moderationslogik
+
+ausschließlich redaktionell
+
+automatisierte Vorfilter (Spam, Duplikate)
+
+4. UX/UI-Konzept
+Designprinzipien
+
+klar
+
+ruhig
+
+erklärend
+
+keine Reizüberflutung
+
+Farblogik
+
+Fakten: neutral
+
+Pro / Contra: eindeutig getrennt
+
+Unsicherheiten: gelb / orange
+
+Altersgerechte Ansprache
+
+einfache, klare Sprache
+
+erklärende Infoboxen
+
+keine Fachbegriffe ohne Erläuterung
+
+Umgang mit Memes, GIFs, Kurzvideos
+
+ausschließlich als Analyseobjekt
+
+visuelle Marker für:
+
+Manipulation
+
+aus dem Kontext gerissene Inhalte
+
+5. User Journey
+Persona
+
+Alex, 15, stößt auf ein virales Video mit einer politischen Behauptung.
+
+Ablauf
+
+Alex teilt den Link in die App
+
+Die App erkennt Thema und startet die Prüfung
+
+Alex sieht:
+
+Faktenstatus
+
+Faktenbasis
+
+Pro- & Contra-Argumente
+
+Alex öffnet ein Lernmodul
+
+Alex versteht:
+
+was belegt ist
+
+was umstritten ist
+
+was offen bleibt
+
+Lernwirkung
+
+Verständnis statt Überzeugung
+
+Sicherheit im Umgang mit Informationen
+
+6. Screen-Struktur (Text-Wireframe)
+Start / Dashboard
+
+Suchfeld
+
+Aktuelle geprüfte Themen
+
+Lernmodule
+
+Fact-Check & Pro/Contra
+
+oben: Faktenstatus
+
+Mitte: Faktenbasis
+
+unten: Pro & Contra nebeneinander
+
+Journalisten-Bereich
+
+Artikel
+
+Erklärvideos
+
+Ask-a-Journalist
+
+Meldescreen
+
+Eingabe
+
+Statusübersicht
+
+Redaktionelle Rückmeldung
+
+7. Technisches Konzept
+Plattform
+
+Android
+
+Minimum API-Level: 24
+
+Tech-Stack
+
+Kotlin
+
+MVVM + Clean Architecture
+
+Jetpack Compose, ViewModel, Room
+
+Architektur
+
+Client (Android-App)
+
+Backend (Redaktion & APIs)
+
+klare Trennung von:
+
+Daten
+
+Logik
+
+Darstellung
+
+API-Einbindung
+
+Fakten- & Daten-APIs
+
+Eigene journalistische Datenbank
+
+Versionierte Prüfstände
+
+Offline-Strategie
+
+Zwischenspeicherung geprüfter Inhalte
+
+Kennzeichnung: „Stand vom …“
+
+8. Redaktioneller Workflow
+
+Themenmeldung
+
+Automatisierte Vorprüfung
+
+Journalistische Recherche
+
+Redaktionelle Freigabe
+
+Veröffentlichung
+
+Aktualisierung bei neuen Erkenntnissen
+
+Push-Benachrichtigungen nur bei Faktenänderungen oder Klarstellungen
+
+9. Datenschutz & Ethik
+Minderjährige
+
+keine Klarnamen
+
+keine personenbezogenen Profile
+
+anonyme Nutzung möglich
+
+Keine Meinungsdaten
+
+keine Likes
+
+keine Abstimmungen
+
+keine Profilbildung nach Haltung
+
+Transparenz
+
+eigener Bereich:
+
+„Wie wir arbeiten“
+
+„Wie Fakten geprüft werden“
+
+Eltern-Informationsbereich
+
+Ergebnis
+
+Die App „Fakten-Checker“ ist ein journalistisch verantwortetes, technisch realistisch umsetzbares und pädagogisch sauberes System zur Fakten- und Argumentationsprüfung.
+Sie befähigt Nutzer, Informationen selbstständig einzuordnen, ohne Meinungen zu erfassen oder zu beeinflussen, und ist direkt als Lastenheft, Konzeptpapier oder Entwicklungsgrundlage nutzbar.

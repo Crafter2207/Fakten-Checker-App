@@ -1,17 +1,39 @@
 package com.fakten.checker.ui.dashboard
 
 import androidx.lifecycle.ViewModel
-import com.fakten.checker.domain.usecase.CheckFactUseCase
+import androidx.lifecycle.viewModelScope
+import com.fakten.checker.domain.model.LearningModule
 import com.fakten.checker.domain.usecase.GetLearningModulesUseCase
 import dagger.hilt.android.lifecycle.HiltViewModel
+import kotlinx.coroutines.flow.MutableStateFlow
+import kotlinx.coroutines.flow.StateFlow
+import kotlinx.coroutines.flow.asStateFlow
+import kotlinx.coroutines.launch
 import javax.inject.Inject
+
+data class DashboardState(
+    val learningModules: List<LearningModule> = emptyList(),
+    val isLoading: Boolean = false
+)
 
 @HiltViewModel
 class DashboardViewModel @Inject constructor(
-    private val checkFactUseCase: CheckFactUseCase,
     private val getLearningModulesUseCase: GetLearningModulesUseCase
 ) : ViewModel() {
 
-    // TODO: Implement state for the dashboard screen
+    private val _state = MutableStateFlow(DashboardState())
+    val state: StateFlow<DashboardState> = _state.asStateFlow()
 
+    init {
+        loadLearningModules()
+    }
+
+    private fun loadLearningModules() {
+        viewModelScope.launch {
+            _state.value = _state.value.copy(isLoading = true)
+            // In a real app, handle potential errors
+            val modules = getLearningModulesUseCase.execute()
+            _state.value = _state.value.copy(learningModules = modules, isLoading = false)
+        }
+    }
 }

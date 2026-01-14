@@ -1,0 +1,16 @@
+-- Merging decision tree log ---
+manifest
+ADDED from /home/flex/StudioProjects/Fakten-Checker-App/core/build/intermediates/tmp/ProcessLibraryManifest/debug/tempAndroidManifest3468132307545085584.xml:2:13-83
+INJECTED from /home/flex/StudioProjects/Fakten-Checker-App/core/build/intermediates/tmp/ProcessLibraryManifest/debug/tempAndroidManifest3468132307545085584.xml:2:13-83
+	package
+		INJECTED from /home/flex/StudioProjects/Fakten-Checker-App/core/build/intermediates/tmp/ProcessLibraryManifest/debug/tempAndroidManifest3468132307545085584.xml
+	xmlns:android
+		ADDED from /home/flex/StudioProjects/Fakten-Checker-App/core/build/intermediates/tmp/ProcessLibraryManifest/debug/tempAndroidManifest3468132307545085584.xml:2:23-81
+uses-sdk
+INJECTED from /home/flex/StudioProjects/Fakten-Checker-App/core/build/intermediates/tmp/ProcessLibraryManifest/debug/tempAndroidManifest3468132307545085584.xml reason: use-sdk injection requested
+INJECTED from /home/flex/StudioProjects/Fakten-Checker-App/core/build/intermediates/tmp/ProcessLibraryManifest/debug/tempAndroidManifest3468132307545085584.xml
+INJECTED from /home/flex/StudioProjects/Fakten-Checker-App/core/build/intermediates/tmp/ProcessLibraryManifest/debug/tempAndroidManifest3468132307545085584.xml
+	android:targetSdkVersion
+		INJECTED from /home/flex/StudioProjects/Fakten-Checker-App/core/build/intermediates/tmp/ProcessLibraryManifest/debug/tempAndroidManifest3468132307545085584.xml
+	android:minSdkVersion
+		INJECTED from /home/flex/StudioProjects/Fakten-Checker-App/core/build/intermediates/tmp/ProcessLibraryManifest/debug/tempAndroidManifest3468132307545085584.xml

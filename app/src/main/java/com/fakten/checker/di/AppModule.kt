@@ -50,7 +50,7 @@ object AppModule {
     @Provides
     @Singleton
     fun provideFactRepository(service: FactCheckService, db: FactCheckerDatabase): FactRepository {
-        return FactRepositoryImpl(/*TODO: pass service and dao*/)
+        return FactRepositoryImpl(service, db.factDao())
     }
 
     @Provides
