@@ -1,17 +1,24 @@
 package com.fakten.checker.ui.factcheck
 
 import androidx.compose.foundation.layout.*
-import androidx.compose.material3.* // Using Material 3 components
+import androidx.compose.material3.*
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import androidx.hilt.navigation.compose.hiltViewModel
+import androidx.lifecycle.compose.collectAsStateWithLifecycle
+import androidx.navigation.NavController
+import com.fakten.checker.Screen
+import com.fakten.checker.domain.model.Fact
 import com.fakten.checker.ui.theme.FaktenCheckerAppTheme
 
 @OptIn(ExperimentalMaterial3Api::class) // Enable experimental Material 3 features
 @Composable
-fun FactCheckScreen() {
+fun FactCheckScreen(viewModel: FactCheckViewModel = hiltViewModel(), navController: NavController) {
+    val state by viewModel.state.collectAsStateWithLifecycle() // Use collectAsStateWithLifecycle for better lifecycle awareness
+
     var inputText by remember { mutableStateOf("") }
     var isUrlInput by remember { mutableStateOf(false) }
 
@@ -46,12 +53,32 @@ fun FactCheckScreen() {
 
         Button(
             onClick = {
-                // TODO: Handle fact check submission
-                println("Submitting: $inputText")
+                if (inputText.isNotBlank()) {
+                    viewModel.checkFact(inputText, isUrlInput)
+                }
             },
-            modifier = Modifier.fillMaxWidth()
+            modifier = Modifier.fillMaxWidth(),
+            enabled = !state.isLoading // Disable button while loading
         ) {
-            Text("Check Fact")
+            if (state.isLoading) {
+                CircularProgressIndicator(modifier = Modifier.size(24.dp))
+            } else {
+                Text("Check Fact")
+            }
+        }
+
+        Spacer(modifier = Modifier.height(16.dp))
+
+        // Display results or errors
+        state.error?.let {
+            Text("Error: $it", color = MaterialTheme.colorScheme.error)
+        }
+        state.fact?.let {
+            // Navigate to FactResultScreen when a fact is available
+            LaunchedEffect(it) {
+                navController.navigate(Screen.FactResult(fact = it).getRoute(it))
+            }
+            // We don't display FactResult here anymore, navigation handles it.
         }
     }
 }
@@ -60,6 +87,6 @@ fun FactCheckScreen() {
 @Composable
 fun FactCheckScreenPreview() {
     FaktenCheckerAppTheme {
-        FactCheckScreen()
+        FactCheckScreen(navController = NavController(androidx.compose.ui.platform.LocalContext.current))
     }
 }
