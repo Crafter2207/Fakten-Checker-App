@@ -1,16 +1,16 @@
 -- Merging decision tree log ---
 manifest
-ADDED from /home/admin/Fakten-Checker-App/data/build/intermediates/tmp/ProcessLibraryManifest/debug/tempAndroidManifest3737238658942989677.xml:2:13-83
-INJECTED from /home/admin/Fakten-Checker-App/data/build/intermediates/tmp/ProcessLibraryManifest/debug/tempAndroidManifest3737238658942989677.xml:2:13-83
+ADDED from /home/admin/Fakten-Checker-App/data/build/intermediates/tmp/ProcessLibraryManifest/debug/tempAndroidManifest10913356259801765312.xml:2:13-83
+INJECTED from /home/admin/Fakten-Checker-App/data/build/intermediates/tmp/ProcessLibraryManifest/debug/tempAndroidManifest10913356259801765312.xml:2:13-83
 	package
-		INJECTED from /home/admin/Fakten-Checker-App/data/build/intermediates/tmp/ProcessLibraryManifest/debug/tempAndroidManifest3737238658942989677.xml
+		INJECTED from /home/admin/Fakten-Checker-App/data/build/intermediates/tmp/ProcessLibraryManifest/debug/tempAndroidManifest10913356259801765312.xml
 	xmlns:android
-		ADDED from /home/admin/Fakten-Checker-App/data/build/intermediates/tmp/ProcessLibraryManifest/debug/tempAndroidManifest3737238658942989677.xml:2:23-81
+		ADDED from /home/admin/Fakten-Checker-App/data/build/intermediates/tmp/ProcessLibraryManifest/debug/tempAndroidManifest10913356259801765312.xml:2:23-81
 uses-sdk
-INJECTED from /home/admin/Fakten-Checker-App/data/build/intermediates/tmp/ProcessLibraryManifest/debug/tempAndroidManifest3737238658942989677.xml reason: use-sdk injection requested
-INJECTED from /home/admin/Fakten-Checker-App/data/build/intermediates/tmp/ProcessLibraryManifest/debug/tempAndroidManifest3737238658942989677.xml
-INJECTED from /home/admin/Fakten-Checker-App/data/build/intermediates/tmp/ProcessLibraryManifest/debug/tempAndroidManifest3737238658942989677.xml
+INJECTED from /home/admin/Fakten-Checker-App/data/build/intermediates/tmp/ProcessLibraryManifest/debug/tempAndroidManifest10913356259801765312.xml reason: use-sdk injection requested
+INJECTED from /home/admin/Fakten-Checker-App/data/build/intermediates/tmp/ProcessLibraryManifest/debug/tempAndroidManifest10913356259801765312.xml
+INJECTED from /home/admin/Fakten-Checker-App/data/build/intermediates/tmp/ProcessLibraryManifest/debug/tempAndroidManifest10913356259801765312.xml
 	android:targetSdkVersion
-		INJECTED from /home/admin/Fakten-Checker-App/data/build/intermediates/tmp/ProcessLibraryManifest/debug/tempAndroidManifest3737238658942989677.xml
+		INJECTED from /home/admin/Fakten-Checker-App/data/build/intermediates/tmp/ProcessLibraryManifest/debug/tempAndroidManifest10913356259801765312.xml
 	android:minSdkVersion
-		INJECTED from /home/admin/Fakten-Checker-App/data/build/intermediates/tmp/ProcessLibraryManifest/debug/tempAndroidManifest3737238658942989677.xml
+		INJECTED from /home/admin/Fakten-Checker-App/data/build/intermediates/tmp/ProcessLibraryManifest/debug/tempAndroidManifest10913356259801765312.xml

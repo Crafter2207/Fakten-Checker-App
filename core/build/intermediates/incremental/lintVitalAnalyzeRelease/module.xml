@@ -1,0 +1,19 @@
+<lint-module
+    format="1"
+    dir="/home/admin/Fakten-Checker-App/core"
+    name=":core"
+    type="LIBRARY"
+    maven="Fakten-Checker-App:core:unspecified"
+    agpVersion="8.13.2"
+    buildFolder="build"
+    bootClassPath="/home/admin/.android-sdk/platforms/android-34/android.jar:/home/admin/.android-sdk/build-tools/35.0.0/core-lambda-stubs.jar"
+    javaSourceLevel="17"
+    compileTarget="android-34"
+    neverShrinking="true">
+  <lintOptions
+      abortOnError="true"
+      absolutePaths="true"
+      checkReleaseBuilds="true"
+      explainIssues="true"/>
+  <variant name="release"/>
+</lint-module>
