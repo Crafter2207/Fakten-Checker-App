@@ -5,16 +5,20 @@ import androidx.compose.material3.*
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
+import androidx.navigation.compose.rememberNavController
 import com.fakten.checker.domain.model.Fact
+import com.fakten.checker.domain.model.FactStatus
 import com.fakten.checker.ui.theme.FaktenCheckerAppTheme
+import java.util.Date
 
 @Composable
 fun FactResultScreen(
     navController: NavController,
-    fact: Fact? // Accept the fact data as a parameter
+    fact: Fact?
 ) {
     Column(
         modifier = Modifier
@@ -31,11 +35,11 @@ fun FactResultScreen(
             Text("No fact data available.")
         }
 
-        Spacer(modifier = Modifier.weight(1f)) // Push button to the bottom
+        Spacer(modifier = Modifier.weight(1f))
 
         Button(
             onClick = {
-                navController.popBackStack() // Go back to the previous screen (likely FactCheckScreen)
+                navController.popBackStack()
             },
             modifier = Modifier.fillMaxWidth()
         ) {
@@ -48,12 +52,11 @@ fun FactResultScreen(
 fun FactResultDisplay(fact: Fact) {
     Card(modifier = Modifier.fillMaxWidth()) {
         Column(modifier = Modifier.padding(16.dp)) {
-            Text("Status: ${fact.status}", style = MaterialTheme.typography.titleMedium)
+            Text("Status: ${fact.status.name}", style = MaterialTheme.typography.titleMedium)
             Spacer(modifier = Modifier.height(8.dp))
             Text("Statement: ${fact.statement}")
             Spacer(modifier = Modifier.height(8.dp))
             Text("Sources: ${fact.sources.joinToString(", ")}")
-            // TODO: Format checkDate appropriately
         }
     }
 }
@@ -62,14 +65,13 @@ fun FactResultDisplay(fact: Fact) {
 @Composable
 fun FactResultScreenPreview() {
     FaktenCheckerAppTheme {
-        // Preview requires a dummy Fact object and NavController
         val dummyFact = Fact(
             statement = "This is a dummy statement.",
             status = FactStatus.CONFIRMED,
             sources = listOf("Source 1", "Source 2"),
-            checkDate = java.util.Date()
+            checkDate = Date()
         )
-        // A dummy NavController can be created for preview purposes if needed, but often it's omitted if the preview focuses on UI elements.
-        FactResultScreen(navController = NavController(androidx.compose.ui.platform.LocalContext.current), fact = dummyFact)
+        FactResultScreen(navController = rememberNavController(), fact = dummyFact)
     }
 }
+

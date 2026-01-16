@@ -30,9 +30,9 @@ class FactCheckViewModel @Inject constructor(
             _state.value = _state.value.copy(isLoading = true, error = null)
             try {
                 val fact = if (isUrl) {
-                    checkFactUseCase.execute(input) // Assuming execute(url: String) exists
+                    checkFactUseCase.executeFromUrl(input)
                 } else {
-                    checkFactUseCase.execute(input) // Assuming execute(text: String) exists
+                    checkFactUseCase.executeFromText(input)
                 }
                 _state.value = _state.value.copy(fact = fact, isLoading = false)
             } catch (e: Exception) {
@@ -41,3 +41,4 @@ class FactCheckViewModel @Inject constructor(
         }
     }
 }
+

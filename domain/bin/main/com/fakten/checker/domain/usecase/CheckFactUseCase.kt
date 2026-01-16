@@ -5,11 +5,11 @@ import com.fakten.checker.domain.repository.FactRepository
 
 class CheckFactUseCase(private val factRepository: FactRepository) {
 
-    suspend fun execute(text: String): Fact {
-        return factRepository.checkFact(text)
+    suspend fun executeFromText(text: String): Fact {
+        return factRepository.checkFactFromText(text)
     }
 
-    suspend fun execute(url: String): Fact {
-        return factRepository.checkFact(url)
+    suspend fun executeFromUrl(url: String): Fact {
+        return factRepository.checkFactFromUrl(url)
     }
 }

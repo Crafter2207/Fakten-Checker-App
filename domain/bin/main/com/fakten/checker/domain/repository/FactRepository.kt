@@ -15,7 +15,7 @@ interface FactRepository {
      * @param text The text to be checked.
      * @return The checked [Fact].
      */
-    suspend fun checkFact(text: String): Fact
+    suspend fun checkFactFromText(text: String): Fact
 
     /**
      * Submits a URL for fact-checking.
@@ -23,7 +23,7 @@ interface FactRepository {
      * @param url The URL to be checked.
      * @return The checked [Fact].
      */
-    suspend fun checkFact(url: String): Fact
+    suspend fun checkFactFromUrl(url: String): Fact
 
     /**
      * Retrieves the pro arguments for a given fact ID.

@@ -5,33 +5,34 @@ import com.fakten.checker.data.remote.FactCheckService
 import com.fakten.checker.domain.model.Argument
 import com.fakten.checker.domain.model.Claim
 import com.fakten.checker.domain.model.Fact
+import com.fakten.checker.domain.model.FactStatus
+import com.fakten.checker.domain.model.ClaimStatus
 import com.fakten.checker.domain.repository.FactRepository
+import java.util.Date
 import javax.inject.Inject
+import javax.inject.Singleton
 
+@Singleton
 class FactRepositoryImpl @Inject constructor(
     private val factCheckService: FactCheckService,
     private val factDao: FactDao
 ) : FactRepository {
 
-    override suspend fun checkFact(text: String): Fact {
+    override suspend fun checkFactFromText(text: String): Fact {
         return Fact(
-            id = "placeholder",
-            text = text,
-            status = com.fakten.checker.domain.model.FactStatus.PENDING,
-            source = "Unknown",
-            confidence = 0.0f,
-            explanation = "Analyse läuft..."
+            statement = text,
+            status = FactStatus.UNPROVEN,
+            sources = emptyList(),
+            checkDate = Date()
         )
     }
 
-    override suspend fun checkFact(url: String): Fact {
+    override suspend fun checkFactFromUrl(url: String): Fact {
         return Fact(
-            id = "placeholder_url",
-            text = "URL: $url",
-            status = com.fakten.checker.domain.model.FactStatus.PENDING,
-            source = url,
-            confidence = 0.0f,
-            explanation = "URL wird analysiert..."
+            statement = "URL: $url",
+            status = FactStatus.UNPROVEN,
+            sources = listOf(url),
+            checkDate = Date()
         )
     }
 
@@ -49,10 +50,10 @@ class FactRepositoryImpl @Inject constructor(
 
     override suspend fun getClaimStatus(claimId: String): Claim {
         return Claim(
-            id = claimId,
             text = "Placeholder Claim",
-            status = com.fakten.checker.domain.model.ClaimStatus.SUBMITTED,
-            submittedAt = java.util.Date()
+            status = ClaimStatus.IN_REVIEW,
+            rejectionReason = null
         )
     }
 }
+
