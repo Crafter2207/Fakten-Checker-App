@@ -8,17 +8,17 @@ class LearningRepositoryImpl : LearningRepository {
     // TODO: Inject remote and local data sources
 
     override suspend fun getLearningModules(): List<LearningModule> {
-        // TODO: Implement API or local call to get learning modules
-        TODO("Not yet implemented")
+        return listOf(
+            LearningModule("Fakt oder Behauptung?", "Lerne den Unterschied", com.fakten.checker.domain.model.LearningModuleType.FACT_VS_CLAIM),
+            LearningModule("Quelle verstehen", "Bewerte die Glaubwürdigkeit einer Quelle", com.fakten.checker.domain.model.LearningModuleType.SOURCE_ANALYSIS)
+        )
     }
 
     override suspend fun getLearningModuleProgress(moduleId: String): Int {
-        // TODO: Implement local call to get module progress
-        TODO("Not yet implemented")
+        return 0
     }
 
     override suspend fun updateLearningModuleProgress(moduleId: String, progress: Int) {
-        // TODO: Implement local call to update module progress
-        TODO("Not yet implemented")
+        // Placeholder
     }
 }

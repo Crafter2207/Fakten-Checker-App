@@ -14,32 +14,45 @@ class FactRepositoryImpl @Inject constructor(
 ) : FactRepository {
 
     override suspend fun checkFact(text: String): Fact {
-        // TODO: Implement API call for fact checking and cache result
-        TODO("Not yet implemented")
+        return Fact(
+            id = "placeholder",
+            text = text,
+            status = com.fakten.checker.domain.model.FactStatus.PENDING,
+            source = "Unknown",
+            confidence = 0.0f,
+            explanation = "Analyse läuft..."
+        )
     }
 
     override suspend fun checkFact(url: String): Fact {
-        // TODO: Implement API call for fact checking and cache result
-        TODO("Not yet implemented")
+        return Fact(
+            id = "placeholder_url",
+            text = "URL: $url",
+            status = com.fakten.checker.domain.model.FactStatus.PENDING,
+            source = url,
+            confidence = 0.0f,
+            explanation = "URL wird analysiert..."
+        )
     }
 
     override suspend fun getProArguments(factId: String): List<Argument> {
-        // TODO: Implement API call to get pro arguments
-        TODO("Not yet implemented")
+        return emptyList()
     }
 
     override suspend fun getContraArguments(factId: String): List<Argument> {
-        // TODO: Implement API call to get contra arguments
-        TODO("Not yet implemented")
+        return emptyList()
     }
 
     override suspend fun submitClaim(claim: Claim) {
-        // TODO: Implement API call to submit a claim
-        TODO("Not yet implemented")
+        // Placeholder for submission
     }
 
     override suspend fun getClaimStatus(claimId: String): Claim {
-        // TODO: Implement API call to get claim status
-        TODO("Not yet implemented")
+        return Claim(
+            id = claimId,
+            text = "Placeholder Claim",
+            status = com.fakten.checker.domain.model.ClaimStatus.SUBMITTED,
+            submittedAt = java.util.Date()
+        )
     }
 }

@@ -9,17 +9,14 @@ class JournalistRepositoryImpl : JournalistRepository {
     // TODO: Inject remote and local data sources
 
     override suspend fun getArticles(): List<Article> {
-        // TODO: Implement API call to get articles
-        TODO("Not yet implemented")
+        return emptyList()
     }
 
     override suspend fun askQuestion(question: String) {
-        // TODO: Implement API call to ask a question
-        TODO("Not yet implemented")
+        // Placeholder
     }
 
     override suspend fun getAnsweredQuestions(): List<Question> {
-        // TODO: Implement API call to get answered questions
-        TODO("Not yet implemented")
+        return emptyList()
     }
 }

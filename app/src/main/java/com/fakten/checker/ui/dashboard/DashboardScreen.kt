@@ -14,6 +14,8 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.Search
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.navigation.NavController
@@ -32,7 +34,13 @@ fun DashboardScreen(viewModel: DashboardViewModel = hiltViewModel(), navControll
             Column(modifier = Modifier.padding(16.dp)) {
                 Text(text = "Dashboard", style = MaterialTheme.typography.headlineMedium)
                 Spacer(modifier = Modifier.height(16.dp))
-                // TODO: Add Search Field
+                androidx.compose.material3.OutlinedTextField(
+                    value = "",
+                    onValueChange = {},
+                    modifier = Modifier.fillMaxWidth(),
+                    placeholder = { Text("Fakt prüfen...") },
+                    leadingIcon = { androidx.compose.material3.Icon(Icons.Default.Search, contentDescription = null) }
+                )
                 Spacer(modifier = Modifier.height(16.dp))
 
                 Button(
