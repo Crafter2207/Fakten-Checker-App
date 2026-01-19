@@ -4,7 +4,11 @@ import com.fakten.checker.domain.model.Article
 import com.fakten.checker.domain.model.Question
 import com.fakten.checker.domain.repository.JournalistRepository
 
-class JournalistRepositoryImpl : JournalistRepository {
+import javax.inject.Inject
+import javax.inject.Singleton
+
+@Singleton
+class JournalistRepositoryImpl @Inject constructor() : JournalistRepository {
 
     // TODO: Inject remote and local data sources
 

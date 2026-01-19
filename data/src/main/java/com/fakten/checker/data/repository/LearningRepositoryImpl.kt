@@ -3,7 +3,11 @@ package com.fakten.checker.data.repository
 import com.fakten.checker.domain.model.LearningModule
 import com.fakten.checker.domain.repository.LearningRepository
 
-class LearningRepositoryImpl : LearningRepository {
+import javax.inject.Inject
+import javax.inject.Singleton
+
+@Singleton
+class LearningRepositoryImpl @Inject constructor() : LearningRepository {
 
     // TODO: Inject remote and local data sources
 
