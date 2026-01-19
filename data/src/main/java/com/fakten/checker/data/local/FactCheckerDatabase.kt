@@ -8,7 +8,8 @@ import com.fakten.checker.data.local.entity.FactEntity
 
 @Database(
     entities = [FactEntity::class],
-    version = 1
+    version = 1 ,
+    exportSchema = false
 )
 @TypeConverters(Converters::class)
 abstract class FactCheckerDatabase : RoomDatabase() {

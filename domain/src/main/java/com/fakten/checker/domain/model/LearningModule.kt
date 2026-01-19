@@ -1,12 +1,13 @@
 package com.fakten.checker.domain.model
 
-/**
- * Represents a single gamified learning module.
- *
- * @property title The title of the learning module.
- * @property description A short description of the learning module's content.
- * @property type The type of the learning module.
- */
+enum class LearningModuleType {
+    QUIZ,
+    VIDEO,
+    TEXT,
+    FACT_VS_CLAIM,    // Hinzugefügt für das Repository
+    SOURCE_ANALYSIS   // Hinzugefügt für das Repository
+}
+
 data class LearningModule(
     val title: String,
     val description: String,

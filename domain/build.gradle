@@ -1,8 +1,19 @@
 plugins {
-    id 'org.jetbrains.kotlin.jvm'
+    alias(libs.plugins.kotlin.jvm)
+    alias(libs.plugins.ksp)
+    // Hilt-Android-Plugin hier NICHT anwenden!
 }
 
-java {
-    sourceCompatibility = JavaVersion.VERSION_17
-    targetCompatibility = JavaVersion.VERSION_17
+kotlin {
+    jvmToolchain(17)
+}
+
+dependencies {
+    // Ersetze 'hilt-android' durch die reinen Dagger-Bibliotheken
+    // Damit verhinderst du, dass Android-Abhängigkeiten in die Domain rutschen
+    implementation("com.google.dagger:hilt-core:2.51.1")
+    implementation libs.javax.inject
+
+    // KSP braucht den Hilt-Compiler trotzdem für die Code-Generierung
+    ksp libs.hilt.compiler
 }
