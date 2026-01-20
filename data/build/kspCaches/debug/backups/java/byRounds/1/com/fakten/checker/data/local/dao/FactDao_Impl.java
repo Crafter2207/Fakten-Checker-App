@@ -17,7 +17,6 @@ import com.fakten.checker.data.local.entity.FactEntity;
 import com.fakten.checker.domain.model.FactStatus;
 import java.lang.Class;
 import java.lang.Exception;
-import java.lang.IllegalArgumentException;
 import java.lang.Object;
 import java.lang.Override;
 import java.lang.String;
@@ -54,9 +53,10 @@ public final class FactDao_Impl implements FactDao {
           @NonNull final FactEntity entity) {
         statement.bindString(1, entity.getId());
         statement.bindString(2, entity.getStatement());
-        statement.bindString(3, __FactStatus_enumToString(entity.getStatus()));
-        final String _tmp = __converters.fromList(entity.getSources());
-        statement.bindString(4, _tmp);
+        final String _tmp = __converters.fromFactStatus(entity.getStatus());
+        statement.bindString(3, _tmp);
+        final String _tmp_1 = __converters.fromList(entity.getSources());
+        statement.bindString(4, _tmp_1);
         statement.bindLong(5, entity.getCheckDate());
       }
     };
@@ -138,11 +138,13 @@ public final class FactDao_Impl implements FactDao {
             final String _tmpStatement;
             _tmpStatement = _cursor.getString(_cursorIndexOfStatement);
             final FactStatus _tmpStatus;
-            _tmpStatus = __FactStatus_stringToEnum(_cursor.getString(_cursorIndexOfStatus));
-            final List<String> _tmpSources;
             final String _tmp;
-            _tmp = _cursor.getString(_cursorIndexOfSources);
-            _tmpSources = __converters.fromString(_tmp);
+            _tmp = _cursor.getString(_cursorIndexOfStatus);
+            _tmpStatus = __converters.toFactStatus(_tmp);
+            final List<String> _tmpSources;
+            final String _tmp_1;
+            _tmp_1 = _cursor.getString(_cursorIndexOfSources);
+            _tmpSources = __converters.fromString(_tmp_1);
             final long _tmpCheckDate;
             _tmpCheckDate = _cursor.getLong(_cursorIndexOfCheckDate);
             _result = new FactEntity(_tmpId,_tmpStatement,_tmpStatus,_tmpSources,_tmpCheckDate);
@@ -161,25 +163,5 @@ public final class FactDao_Impl implements FactDao {
   @NonNull
   public static List<Class<?>> getRequiredConverters() {
     return Collections.emptyList();
-  }
-
-  private String __FactStatus_enumToString(@NonNull final FactStatus _value) {
-    switch (_value) {
-      case CONFIRMED: return "CONFIRMED";
-      case PARTIALLY_CORRECT: return "PARTIALLY_CORRECT";
-      case UNPROVEN: return "UNPROVEN";
-      case INCORRECT: return "INCORRECT";
-      default: throw new IllegalArgumentException("Can't convert enum to string, unknown enum value: " + _value);
-    }
-  }
-
-  private FactStatus __FactStatus_stringToEnum(@NonNull final String _value) {
-    switch (_value) {
-      case "CONFIRMED": return FactStatus.CONFIRMED;
-      case "PARTIALLY_CORRECT": return FactStatus.PARTIALLY_CORRECT;
-      case "UNPROVEN": return FactStatus.UNPROVEN;
-      case "INCORRECT": return FactStatus.INCORRECT;
-      default: throw new IllegalArgumentException("Can't convert value to enum, unknown value: " + _value);
-    }
   }
 }
