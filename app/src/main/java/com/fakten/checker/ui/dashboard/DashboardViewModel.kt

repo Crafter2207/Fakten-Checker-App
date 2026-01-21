@@ -1,0 +1,71 @@
+package com.fakten.checker.ui.dashboard
+
+import androidx.lifecycle.ViewModel
+import androidx.lifecycle.viewModelScope
+import com.fakten.checker.domain.model.LearningModule
+import com.fakten.checker.domain.usecase.GetLearningModulesUseCase
+import dagger.hilt.android.lifecycle.HiltViewModel
+import kotlinx.coroutines.flow.MutableStateFlow
+import kotlinx.coroutines.flow.StateFlow
+import kotlinx.coroutines.flow.asStateFlow
+import kotlinx.coroutines.launch
+import javax.inject.Inject
+
+data class DashboardState(
+    val learningModules: List<LearningModule> = emptyList(),
+    val isLoading: Boolean = false,
+    val searchQuery: String = "",
+    val searchResults: List<LearningModule> = emptyList()
+)
+
+@HiltViewModel
+class DashboardViewModel @Inject constructor(
+    private val getLearningModulesUseCase: GetLearningModulesUseCase
+) : ViewModel() {
+
+    private val _state = MutableStateFlow(DashboardState())
+    val state: StateFlow<DashboardState> = _state.asStateFlow()
+
+    private var allModules: List<LearningModule> = emptyList()
+
+    init {
+        loadLearningModules()
+    }
+
+    private fun loadLearningModules() {
+        viewModelScope.launch {
+            _state.value = _state.value.copy(isLoading = true)
+            // In a real app, handle potential errors
+            val modules = getLearningModulesUseCase.execute()
+            allModules = modules
+            _state.value = _state.value.copy(
+                learningModules = modules,
+                searchResults = modules,
+                isLoading = false
+            )
+        }
+    }
+
+    fun onSearchQueryChanged(query: String) {
+        _state.value = _state.value.copy(searchQuery = query)
+        
+        // Filter modules based on search query
+        val filteredModules = if (query.isBlank()) {
+            allModules
+        } else {
+            allModules.filter { module ->
+                module.title.contains(query, ignoreCase = true) ||
+                module.description.contains(query, ignoreCase = true)
+            }
+        }
+        _state.value = _state.value.copy(searchResults = filteredModules)
+    }
+
+    fun clearSearch() {
+        _state.value = _state.value.copy(
+            searchQuery = "",
+            searchResults = allModules
+        )
+    }
+}
+

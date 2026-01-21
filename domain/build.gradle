@@ -1,7 +1,6 @@
 plugins {
     alias(libs.plugins.kotlin.jvm)
     alias(libs.plugins.ksp)
-    // Hilt-Android-Plugin hier NICHT anwenden!
 }
 
 kotlin {
@@ -9,11 +8,11 @@ kotlin {
 }
 
 dependencies {
-    // Ersetze 'hilt-android' durch die reinen Dagger-Bibliotheken
-    // Damit verhinderst du, dass Android-Abhängigkeiten in die Domain rutschen
+    // Use hilt-core only for domain layer (no Android dependencies)
     implementation("com.google.dagger:hilt-core:2.51.1")
-    implementation libs.javax.inject
+    implementation(libs.javax.inject)
 
-    // KSP braucht den Hilt-Compiler trotzdem für die Code-Generierung
-    ksp libs.hilt.compiler
+    // KSP needs the Hilt Compiler for code generation
+    ksp(libs.hilt.compiler)
 }
+

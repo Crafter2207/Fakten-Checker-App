@@ -1,16 +1,16 @@
 -- Merging decision tree log ---
 manifest
-ADDED from /home/flex/StudioProjects/Fakten-Checker-App/data/build/intermediates/tmp/ProcessLibraryManifest/debug/tempAndroidManifest5079830815009442227.xml:2:13-83
-INJECTED from /home/flex/StudioProjects/Fakten-Checker-App/data/build/intermediates/tmp/ProcessLibraryManifest/debug/tempAndroidManifest5079830815009442227.xml:2:13-83
+ADDED from /home/flex/StudioProjects/Fakten-Checker-App/data/build/intermediates/tmp/ProcessLibraryManifest/debug/tempAndroidManifest13016129755251702250.xml:2:13-83
+INJECTED from /home/flex/StudioProjects/Fakten-Checker-App/data/build/intermediates/tmp/ProcessLibraryManifest/debug/tempAndroidManifest13016129755251702250.xml:2:13-83
 	package
-		INJECTED from /home/flex/StudioProjects/Fakten-Checker-App/data/build/intermediates/tmp/ProcessLibraryManifest/debug/tempAndroidManifest5079830815009442227.xml
+		INJECTED from /home/flex/StudioProjects/Fakten-Checker-App/data/build/intermediates/tmp/ProcessLibraryManifest/debug/tempAndroidManifest13016129755251702250.xml
 	xmlns:android
-		ADDED from /home/flex/StudioProjects/Fakten-Checker-App/data/build/intermediates/tmp/ProcessLibraryManifest/debug/tempAndroidManifest5079830815009442227.xml:2:23-81
+		ADDED from /home/flex/StudioProjects/Fakten-Checker-App/data/build/intermediates/tmp/ProcessLibraryManifest/debug/tempAndroidManifest13016129755251702250.xml:2:23-81
 uses-sdk
-INJECTED from /home/flex/StudioProjects/Fakten-Checker-App/data/build/intermediates/tmp/ProcessLibraryManifest/debug/tempAndroidManifest5079830815009442227.xml reason: use-sdk injection requested
-INJECTED from /home/flex/StudioProjects/Fakten-Checker-App/data/build/intermediates/tmp/ProcessLibraryManifest/debug/tempAndroidManifest5079830815009442227.xml
-INJECTED from /home/flex/StudioProjects/Fakten-Checker-App/data/build/intermediates/tmp/ProcessLibraryManifest/debug/tempAndroidManifest5079830815009442227.xml
+INJECTED from /home/flex/StudioProjects/Fakten-Checker-App/data/build/intermediates/tmp/ProcessLibraryManifest/debug/tempAndroidManifest13016129755251702250.xml reason: use-sdk injection requested
+INJECTED from /home/flex/StudioProjects/Fakten-Checker-App/data/build/intermediates/tmp/ProcessLibraryManifest/debug/tempAndroidManifest13016129755251702250.xml
+INJECTED from /home/flex/StudioProjects/Fakten-Checker-App/data/build/intermediates/tmp/ProcessLibraryManifest/debug/tempAndroidManifest13016129755251702250.xml
 	android:targetSdkVersion
-		INJECTED from /home/flex/StudioProjects/Fakten-Checker-App/data/build/intermediates/tmp/ProcessLibraryManifest/debug/tempAndroidManifest5079830815009442227.xml
+		INJECTED from /home/flex/StudioProjects/Fakten-Checker-App/data/build/intermediates/tmp/ProcessLibraryManifest/debug/tempAndroidManifest13016129755251702250.xml
 	android:minSdkVersion
-		INJECTED from /home/flex/StudioProjects/Fakten-Checker-App/data/build/intermediates/tmp/ProcessLibraryManifest/debug/tempAndroidManifest5079830815009442227.xml
+		INJECTED from /home/flex/StudioProjects/Fakten-Checker-App/data/build/intermediates/tmp/ProcessLibraryManifest/debug/tempAndroidManifest13016129755251702250.xml
