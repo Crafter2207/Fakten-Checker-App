@@ -1,22 +1,25 @@
 package com.fakten.checker.data.mapper
 
+import com.fakten.checker.data.remote.dto.BackendResponse
 import com.fakten.checker.data.remote.dto.FactDto
 import com.fakten.checker.domain.model.Fact
+import com.fakten.checker.domain.model.FactStatus
 import java.text.SimpleDateFormat
+import java.util.Date
 import java.util.Locale
 
-fun FactDto.toDomain(): Fact {
-    val date = try {
-        // Versuch, das Datum zu parsen. Fallback auf aktuelles Datum.
-        SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS'Z'", Locale.GERMANY).parse(checkDate)
-    } catch (e: Exception) {
-        java.util.Date()
+fun BackendResponse.toDomain(): Fact {
+    val status = when {
+        analysis.contains("wahr", ignoreCase = true) -> FactStatus.CONFIRMED
+        analysis.contains("falsch", ignoreCase = true) -> FactStatus.INCORRECT
+        else -> FactStatus.UNPROVEN
     }
-    
+
     return Fact(
-        statement = this.statement,
-        status = this.status,
-        sources = this.sources,
-        checkDate = date ?: java.util.Date()
+        statement = "Analyse für die angefragte URL",
+        status = status,
+        sources = emptyList(), // Das Backend liefert keine Quellen, daher leer
+        checkDate = Date(),
+        analysis = this.analysis
     )
 }

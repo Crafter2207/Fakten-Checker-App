@@ -1,15 +1,11 @@
 package com.fakten.checker.domain.usecase
 
 import com.fakten.checker.domain.model.Fact
-import com.fakten.checker.domain.repository.FactRepository
+import com.fakten.checker.domain.repository.FactCheckRepository
 
-class CheckFactUseCase(private val factRepository: FactRepository) {
-
-    suspend fun executeFromText(text: String): Fact {
-        return factRepository.checkFactFromText(text)
-    }
-
-    suspend fun executeFromUrl(url: String): Fact {
-        return factRepository.checkFactFromUrl(url)
+class CheckFactUseCase(private val repository: FactCheckRepository) {
+    // Erweitert um den 'provider' Parameter
+    suspend fun execute(url: String, provider: String): Fact {
+        return repository.checkFact(url, provider)
     }
 }

@@ -7,6 +7,7 @@ import retrofit2.http.Query
 interface MyBackendApi {
     @GET("analyze")
     suspend fun checkFactWithAi(
-        @Query("url") targetUrl: String
+        @Query("url") targetUrl: String,
+        @Query("provider") provider: String // "openai/gpt-4o" oder "gemini/..."
     ): BackendResponse
 }
