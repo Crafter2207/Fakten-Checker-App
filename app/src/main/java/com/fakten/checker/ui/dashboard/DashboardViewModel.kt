@@ -33,7 +33,28 @@ class DashboardViewModel @Inject constructor(
             _state.value = _state.value.copy(isLoading = true)
             // In a real app, handle potential errors
             val modules = getLearningModulesUseCase.execute()
-            _state.value = _state.value.copy(learningModules = modules, isLoading = false)
+            _state.value = _state.value.copy(
+                learningModules = modules,
+                filteredModules = modules,
+                isLoading = false
+            )
         }
+    }
+
+    fun onSearchQueryChanged(query: String) {
+        _state.value = _state.value.copy(searchQuery = query)
+        filterModules(query)
+    }
+
+    private fun filterModules(query: String) {
+        val filtered = if (query.isBlank()) {
+            _state.value.learningModules
+        } else {
+            _state.value.learningModules.filter { module ->
+                module.title.contains(query, ignoreCase = true) ||
+                module.description.contains(query, ignoreCase = true)
+            }
+        }
+        _state.value = _state.value.copy(filteredModules = filtered)
     }
 }

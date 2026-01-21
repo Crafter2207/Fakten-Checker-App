@@ -41,14 +41,16 @@ fun DashboardScreen(
     val state by viewModel.state.collectAsStateWithLifecycle()
     DashboardScreenContent(
         state = state,
-        navController = navController
+        navController = navController,
+        viewModel = viewModel
     )
 }
 
 @Composable
 fun DashboardScreenContent(
     state: DashboardState,
-    navController: NavController
+    navController: NavController,
+    viewModel: DashboardViewModel
 ) {
     Box(modifier = Modifier.fillMaxSize()) {
         if (state.isLoading) {
@@ -58,8 +60,8 @@ fun DashboardScreenContent(
                 Text(text = "Dashboard", style = MaterialTheme.typography.headlineMedium)
                 Spacer(modifier = Modifier.height(16.dp))
                 OutlinedTextField(
-                    value = "",
-                    onValueChange = {},
+                    value = state.searchQuery,
+                    onValueChange = { viewModel.onSearchQueryChanged(it) },
                     modifier = Modifier.fillMaxWidth(),
                     placeholder = { Text("Fakt prüfen...") },
                     leadingIcon = { Icon(Icons.Default.Search, contentDescription = null) }
@@ -76,7 +78,7 @@ fun DashboardScreenContent(
                 }
                 Spacer(modifier = Modifier.height(16.dp))
 
-                LearningModuleList(learningModules = state.learningModules)
+                LearningModuleList(learningModules = state.filteredModules)
             }
         }
     }
